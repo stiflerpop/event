@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planning Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #f0f0f0, #c8e1ff);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="tel"], input[type="time"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #4CAF50;
+            box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.5);
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        button {
+            background: linear-gradient(120deg, #4CAF50, #81c784);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            background: #ccc;
+        }
+        button:hover {
+            background: linear-gradient(120deg, #45a049, #66bb6a);
+        }
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #4CAF50;
+            width: 0;
+            transition: width 2s ease;
+        }
+        #formData {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        .confirm-buttons, .whatsapp-section, .home-section {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .home-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .whatsapp-btn:hover, .home-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Planning Form</h1>
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="customerNumber">Customer Phone Number:</label>
+                <input type="tel" id="customerNumber" name="customerNumber">
+            </div>
+            <div class="form-group">
+                <label for="setupTime">Setup Time:</label>
+                <input type="time" id="setupTime" name="setupTime">
+            </div>
+            <div class="form-group">
+                <label for="pickupTime">Pickup Time:</label>
+                <input type="time" id="pickupTime" name="pickupTime">
+            </div>
+
+            <!-- New Fields -->
+            <div class="form-group">
+                <label for="wall">Wall:</label>
+                <select id="wall" name="wall">
+                    <option value="">Select wall type</option>
+                    <option value="Silver shimmer wall -- 2.5 m">Silver shimmer wall -- 2.5 m</option>
+                    <option value="Silver shimmer wall -- 3 m">Silver shimmer wall -- 3 m</option>
+                    <option value="Gold shimmer wall -- 2.5 m">Gold shimmer wall -- 2.5 m</option>
+                    <option value="Gold shimmer wall -- 3 m">Gold shimmer wall -- 3 m</option>
+                    <option value="Pink flower wall -- 2.5 m">Pink flower wall -- 2.5 m</option>
+                    <option value="Pink flower wall -- 3 m">Pink flower wall -- 3 m</option>
+                    <option value="White flower wall -- 2.5 m">White flower wall -- 2.5 m</option>
+                    <option value="White flower wall -- 3 m">White flower wall -- 3 m</option>
+                    <option value="Green wall">Green wall</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="numbers">Numbers:</label>
+                <select id="numbers" name="numbers">
+                    <option value="">Select number type</option>
+                    <option value="12 Flower pink">12 Flower pink</option>
+                    <option value="12 Flower white">12 Flower white</option>
+                    <option value="12 Shimmer">12 Shimmer</option>
+                    <option value="12 Lamps">12 Lamps</option>
+                    <option value="13 Shimer">13 Shimer</option>
+                    <option value="12 Lamps">12 Lamps</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Letters:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="letterSize" value="1m"> 1m</label>
+                    <label><input type="radio" name="letterSize" value="1.5m"> 1.5m</label>
+                </div>
+                <div class="radio-group">
+                    <label><input type="radio" name="letterType" value="Silver shimmer"> Silver shimmer</label>
+                    <label><input type="radio" name="letterType" value="Golden Shimmer"> Golden Shimmer</label>
+                    <label><input type="radio" name="letterType" value="Lamps"> Lamps</label>
+                    <label><input type="radio" name="letterType" value="Color lamps"> Color lamps</label>
+                </div>
+                <input type="text" id="letterText" name="letterText" placeholder="Enter text">
+            </div>
+            <div class="form-group">
+                <label for="neonName">Neon Name:</label>
+                <input type="text" id="neonName" name="neonName">
+            </div>
+            <div class="form-group">
+                <label for="neonSign">Neon Sign:</label>
+                <select id="neonSign" name="neonSign">
+                    <option value="">Select neon sign</option>
+                    <option value="Lets party">Let's party</option>
+                    <option value="Happy birthday">Happy birthday</option>
+                    <option value="12">12</option>
+                    <option value="Better together">Better together</option>
+                </select>
+            </div>
+
+            <!-- Additional Equipment -->
+            <div class="form-group">
+                <label>Additional Equipment:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="additionalEquipment" value="Selfi machine"> Selfie machine</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Candy card"> Candy card</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Bicycle"> Bicycle</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Pink bench"> Pink bench</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Metal balls"> Metal balls</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Green Press Wall to Selfi"> Green Press Wall to Selfi</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="Marry me set"> Marry me set</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="1 lamp stars"> 1 lamp stars</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="2 lamp stars"> 2 lamp stars</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="3 lamp stars"> 3 lamp stars</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="4 lamp stars"> 4 lamp stars</label>
+                    <label><input type="checkbox" name="additionalEquipment" value="5 lamp stars"> 5 lamp stars</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalInfo">Additional Information:</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-submit">
+                Submit
+                <div class="progress-bar" id="progressBar"></div>
+            </button>
+        </form>
+
+        <div id="formData" style="display: none;"></div>
+        <div id="successMessage" style="display: none; text-align: center; font-size: 18px; color: green;">Success</div>
+
+        <!-- WhatsApp Section -->
+        <div class="whatsapp-section" id="whatsappSection" style="display: none;">
+            <a href="#" id="whatsappLink" class="whatsapp-btn">Send WhatsApp</a>
+        </div>
+
+        <!-- Home Button Section -->
+        <div class="home-section" id="homeSection" style="display: none;">
+            <a href="#" class="home-btn" id="homeBtn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4gQbv8f7sAywzyIIhMaQQ6e4XV45r3RGUfsU8wGlaq5QEX1P_2ug3P6UAaOewMSCmUQ/exec';
+        const submitBtn = document.getElementById('submitBtn');
+        const progressBar = document.getElementById('progressBar');
+        const formDataContainer = document.getElementById('formData');
+        const successMessage = document.getElementById('successMessage');
+        const whatsappSection = document.getElementById('whatsappSection');
+        const homeSection = document.getElementById('homeSection');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const homeBtn = document.getElementById('homeBtn');
+
+        document.getElementById('eventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSubmit();
+        });
+
+        function handleSubmit() {
+            const form = document.getElementById('eventForm');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // Блокируем кнопку и запускаем анимацию прогресса
+            submitBtn.disabled = true;
+            progressBar.style.width = '100%';
+
+            // Отправляем данные в Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Убираем прогресс, показываем сообщение об успешной отправке
+                progressBar.style.display = 'none';
+                submitBtn.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                // Генерируем сообщение для WhatsApp
+                const message = encodeURIComponent(`New event details: \n\n${Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n')}`);
+                whatsappLink.href = `https://wa.me/79117505987?text=${message}`;
+                whatsappSection.style.display = 'flex';
+                homeSection.style.display = 'flex';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+
+        // Кнопка "Back to Home" обновляет страницу
+        homeBtn.addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+</body>
+</html>
